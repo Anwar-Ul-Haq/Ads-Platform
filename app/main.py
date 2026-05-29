@@ -41,22 +41,22 @@ def home(request: Request, db: Session = Depends(get_db)):
     )
 
 
-@app.get("/create", response_class=HTMLResponse)
-def create_page(request: Request):
+@app.get("/about", response_class=HTMLResponse)
+def about(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="create.html",
+        name="about.html",
         context={
             "request": request,
         },
     )
 
 
-@app.get("/about", response_class=HTMLResponse)
-def about(request: Request):
+@app.get("/create", response_class=HTMLResponse)
+def create_page(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="about.html",
+        name="create.html",
         context={
             "request": request,
         },
