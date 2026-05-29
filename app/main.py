@@ -8,6 +8,8 @@ from sqlalchemy.orm import Session
 from .database import SessionLocal, engine, Base
 from . import crud
 
+#from app.config import DATABASE_URL
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
@@ -48,6 +50,7 @@ def about(request: Request):
         name="about.html",
         context={
             "request": request,
+            #"database_url": DATABASE_URL,
         },
     )
 
