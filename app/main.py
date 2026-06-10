@@ -116,7 +116,7 @@ def delete_ad(
     ad_id: int,
     db: Session = Depends(get_db),
 ):
-    crud.delete_ad(db, ad_id)
+    # crud.delete_ad(db, ad_id)
 
     return RedirectResponse(url="/", status_code=303)
 
